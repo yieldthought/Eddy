@@ -14,12 +14,19 @@ or in `~/Projects/flow/.venv`).
 
 ```bash
 git clone https://github.com/yieldthought/Eddy.git && cd Eddy
-./build.sh --install   # builds build/Eddy.app and copies it to /Applications
-open -a Eddy
+./install.sh          # installs /Applications/Eddy.app and ~/bin/eddy
+~/bin/eddy
 ```
 
-`./build.sh` alone only builds; `--icon` redraws the app icon. The sidebar shows
-`~/flows` and `~/Projects/flow` by default; add folders from the `+` menu.
+With `~/bin` on your `PATH`, use `eddy` to launch the app or `eddy path/to/file.flow`
+to open a file (multiple files and paths with spaces are supported). If needed,
+add `export PATH="$HOME/bin:$PATH"` to your shell startup file (usually `~/.zshrc`)
+and open a new terminal.
+
+To update, quit Eddy and rerun `./install.sh`. Pass `--icon` to redraw the app icon.
+`./build.sh` alone only builds; `./build.sh --install` installs just the app.
+The sidebar shows `~/flows` and `~/Projects/flow` by default; add folders from the
+`+` menu.
 
 ## What it knows about flows
 
